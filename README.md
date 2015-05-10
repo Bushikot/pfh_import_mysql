@@ -5,7 +5,7 @@ PHP script for import **Personal Finances Home 3.8** CSV file to MySQL database.
 ###Export from Personal Finances Home
 * Go to Tools->Export
 * Select ";" as separator
-* Check all fields on *Fields* tab
+* Check all fields on *"Fields"* tab
 
 ###DB schema
 ![screenshot](https://github.com/Bushikot/pfh_import_mysql/blob/master/db/schema.png)
