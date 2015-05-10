@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Personal Finances Home to MySQL</title>
         <meta name="author" content="bushikot@gmail.com">
-        <meta name="description" content="Personal Finances Home CSV file to MySQL import script">
+        <meta name="description" content="Personal Finances Home 3.8 CSV file to MySQL import script">
     </head>
 	<body>
 		<form action="" method="post" enctype="multipart/form-data">
