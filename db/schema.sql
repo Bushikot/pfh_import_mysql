@@ -1,0 +1,76 @@
+CREATE TABLE transaction (
+  transaction_id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  tr_date DATE  NOT NULL  ,
+  quantity INTEGER UNSIGNED  NOT NULL  ,
+  amount DECIMAL(15,2)  NOT NULL  ,
+  price DECIMAL(15,2)  NULL  ,
+  description_id INTEGER UNSIGNED  NULL  ,
+  family_id INTEGER UNSIGNED  NULL  ,
+  tag_id INTEGER UNSIGNED  NULL  ,
+  account_id INTEGER UNSIGNED  NULL  ,
+  notes_id INTEGER UNSIGNED  NULL  ,
+  category_id INTEGER UNSIGNED  NULL  ,
+  custom_field_1 INTEGER UNSIGNED  NULL  ,
+  custom_field_2 INTEGER UNSIGNED  NULL  ,
+  custom_field_3 INTEGER UNSIGNED  NULL    ,
+PRIMARY KEY(transaction_id))
+ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE notes (
+  notes_id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  notes_text TEXT  NULL    ,
+  text_hash VARCHAR(32)  NOT NULL    UNIQUE,
+PRIMARY KEY(notes_id))
+ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE family (
+  family_id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  name VARCHAR(100)  NULL    UNIQUE,
+PRIMARY KEY(family_id))
+ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE tag (
+  tag_id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  caption VARCHAR(100)  NULL    UNIQUE,
+PRIMARY KEY(tag_id))
+ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE category (
+  category_id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  account_id INTEGER UNSIGNED  NULL  ,
+  caption VARCHAR(100)  NULL    UNIQUE,
+PRIMARY KEY(category_id),
+UNIQUE KEY category_unique (account_id, caption))
+ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE account (
+  account_id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  caption VARCHAR(100)  NULL    UNIQUE,
+PRIMARY KEY(account_id))
+ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE description (
+  description_id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  caption VARCHAR(100)  NULL    UNIQUE,
+PRIMARY KEY(description_id))
+ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE custom_field (
+  custom_field_id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  caption VARCHAR(100)  NULL    UNIQUE,
+PRIMARY KEY(custom_field_id))
+ENGINE=MyISAM DEFAULT CHARSET=utf8;
